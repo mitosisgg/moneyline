@@ -1,7 +1,7 @@
+from ..moneyline import *
 import unittest
-from moneyline import *
 
-class TestMoneyline(unittest.TestCase):
+class TestMoneyline(unittest.TestCase):    
 
     def setUp(self):
         self.o1 = 1.10
@@ -105,3 +105,6 @@ class TestMoneyline(unittest.TestCase):
             as_fraction(self.o5)
         with self.assertRaises(ValueError):
             as_fraction(self.o6)
+
+if __name__ == "__main__":
+    unittest.main()
