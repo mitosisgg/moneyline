@@ -33,13 +33,6 @@ odds = {
 
 class TestMoneyline(unittest.TestCase):    
 
-    def setUp(self):
-        self.o1 = 1.10
-        self.o2 = "+150"
-        self.o3 = "-110"
-        self.o4 = "200/100"
-        
-
     def test_is_fractional(self):
         result1 = is_fractional(odds["f110"][0])
         result2 = is_fractional(odds["f110"][1])
