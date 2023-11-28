@@ -34,10 +34,10 @@ odds = {
 class TestMoneyline(unittest.TestCase):    
 
     def test_is_fractional(self):
-        result1 = is_fractional(odds["f110"][0])
-        result2 = is_fractional(odds["f110"][1])
-        result3 = is_fractional(odds["u110"][1])
-        result4 = is_fractional(odds["f110"][2])
+        result1 = is_fractional(odds["f110"][0]) # "-110"
+        result2 = is_fractional(odds["f110"][1]) # 1.901
+        result3 = is_fractional(odds["u110"][1]) # 2.1
+        result4 = is_fractional(odds["f110"][2]) # "909/1000"
         result5 = is_fractional(None)
         result6 = is_fractional("")
 
@@ -49,31 +49,31 @@ class TestMoneyline(unittest.TestCase):
         self.assertEqual(result6, False)
 
     def test_is_american(self):
-        result1 = is_american(odds["f110"][0])
-        result2 = is_american(odds["f110"][1])
-        result3 = is_american(odds["u110"][1])
-        result4 = is_american(odds["f110"][2])
+        result1 = is_american(odds["f110"][0]) # "-110"
+        result2 = is_american(odds["f110"][1]) # 1.901
+        result3 = is_american(odds["u110"][0]) # "+110"
+        result4 = is_american(odds["f110"][2]) # "909/1000"
         result5 = is_american(None)
         result6 = is_american("")
 
-        self.assertEqual(result1, False)
-        self.assertEqual(result2), True)
+        self.assertEqual(result1, True)
+        self.assertEqual(result2, False)
         self.assertEqual(result3, True)
         self.assertEqual(result4, False)
         self.assertEqual(result5, False)
         self.assertEqual(result6, False)
 
     def test_is_decimal(self):
-        result1 = is_decimal(odds["f110"][0])
-        result2 = is_decimal(odds["f110"][1])
-        result3 = is_decimal(odds["u110"][1])
-        result4 = is_decimal(odds["f110"][2])
+        result1 = is_decimal(odds["f110"][0]) # "-110"
+        result2 = is_decimal(odds["f110"][1]) # 1.901
+        result3 = is_decimal(odds["u110"][1]) # 2.1
+        result4 = is_decimal(odds["f110"][2]) # "909/1000"
         result5 = is_decimal(None)
         result6 = is_decimal("")
 
-        self.assertEqual(result1, True)
-        self.assertEqual(result2, False)
-        self.assertEqual(result3, False)
+        self.assertEqual(result1, False)
+        self.assertEqual(result2, True)
+        self.assertEqual(result3, True)
         self.assertEqual(result4, False)
         self.assertEqual(result5, False)
         self.assertEqual(result6, False)
